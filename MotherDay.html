@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>母亲节快乐</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #ffe4e1, #fff5ee);
+            text-align: center;
+            padding-top: 80px;
+            font-family: 'Microsoft YaHei', sans-serif;
+            color: #d2691e;
+        }
+        h1 {
+            font-size: 36px;
+            color: red;
+        }
+        p {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        img {
+            width: 150px;
+            margin-top: 30px;
+            border-radius: 50%;
+        }
+        .hint {
+            font-size: 16px;
+            color: gray;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h1>亲爱的妈妈，母亲节快乐 ❤️</h1>
+<p>感谢您一直以来的爱与陪伴<br>愿您每天幸福安康，笑口常开</p>
+
+<img src="https://img.alicdn.com/tfs/TB1N.rPnYjTBKNjSZFwXXcItXXa-300-300.png" alt="爱心">
+
+<audio id="bgAudio" autoplay loop muted>
+    <source src="卡农.mp3" type="audio/mpeg">
+    您的浏览器不支持音频播放。
+</audio>
+
+<div class="hint" onclick="playAudio()">🎵 点击此处开启背景音乐</div>
+
+<script>
+    let hasPlayed = false;
+
+    function playAudio() {
+        const audio = document.getElementById('bgAudio');
+        audio.muted = false;
+        audio.play();
+        hasPlayed = true;
+        document.querySelector('.hint').style.display = 'none';
+    }
+
+    // 可选：监听一次点击事件触发播放
+    document.body.addEventListener('click', () => {
+        if (!hasPlayed) {
+            playAudio();
+        }
+    });
+</script>
+
+</body>
+</html>
